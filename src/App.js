@@ -43,6 +43,7 @@ function App() {
   useEffect(()=>
   {
       shuffledCards();
+      setdisabled(false);
   },[])
 
   const gamehandler=()=>
@@ -58,6 +59,10 @@ function App() {
   }
   useEffect(()=>
   {
+    if(turns<15)
+    {
+
+    
        if(choiceone && choicetwo)
        {
         setdisabled(true);
@@ -92,6 +97,11 @@ function App() {
          }
          
        }
+      }
+      else 
+      {
+        setdisabled(true);
+      }
   },[choiceone,choicetwo])
 
 
@@ -100,6 +110,7 @@ function App() {
     setchoiceone(null);
     setchoicetwo(null);
     setturns((prev)=>prev+1);
+    
   }
 
   console.log(gamecards)
@@ -108,7 +119,7 @@ function App() {
     <div className="App flex items-center min-h-screen flex-col p-2 gap-2 bg-black  ">
   <h1 className='text-xl font-bold underline text-white '>Match Game</h1>
   <button className='px-2 py-1 bg-green-400 rounded-md font bold text-white'onClick={gamehandler} >New Game</button>
-  <p className='text-slate-400 font-bold text-lg'>{turns < 5 ? `Turns: ${turns}` : "Start New Game"} <span className=' font-semibold text-red-800 '>{turns >= 5 ? "You Lost" : ""}</span></p>
+  <p className='text-slate-400 font-bold text-lg'>{turns < 15 ? `Turns: ${turns}` : "Start New Game"} <span className=' font-semibold text-red-800 '>{turns >= 15? "You Lost" : ""}</span></p>
 
   <div className='grid grid-cols-4 gap-2'>
     {
