@@ -15,7 +15,7 @@ const AloneCard=({card,handlechoice,flipped,disabled})=>
           }
         
    return (
-          <div className={`mx-auto flex border border-slate-800 relative card rounded-md ${flipped ? "flipped" : ""} rounded-md`}>
+          <div className={`mx-auto flex border border-slate-800 relative card rounded-md ${flipped ? "flipped" : "action"} rounded-md max-w-[150px] w-full`}>
     
      <img src={cover} alt="back" onClick={clickhandler} className='absolute back rounded-md' />
           <img src={card?.src} alt='front' className='front rounded-md' />

@@ -2,19 +2,21 @@
           transform: rotateY(180deg);
           transition: transform .5s linear;
         }
+        .action{
+          transform: rotateY(0deg);
+          transition: transform .5s linear;
+        }
+        
+       
         
       
         .flipped .front {
           transform: rotateY(0deg);
+         
           transform-style: preserve-3d;
         }
         
         
-   
-        .card {
-          max-width: 150px;
-          width:100%;
-          
-          perspective: 1000px;
-        }
         
+   
+      

@@ -50,6 +50,7 @@ function App() {
   {
     shuffledCards();
     setturns(0);
+    setdisabled(false);
   }
   const handlechoice=(card)=>
   {
@@ -88,7 +89,7 @@ function App() {
          
          else 
          {
-          console.log("unmatched")
+          
           setTimeout(() => {
             reset();
             setdisabled(false);
